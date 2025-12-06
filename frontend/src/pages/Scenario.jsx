@@ -33,14 +33,33 @@ else navigate('/results');
 };
 
 
-if (!q) return <main style={{padding:20}}>Cargando…</main>;
-
+if (!q) {
+    return (
+    <main className="min-h-screen bg-gray-100 flex items-center justify-center">
+        <p className="text-gray-600">Cargando…</p>
+    </main>
+    );
+}
 
 return (
-<main style={{ padding:20, maxWidth:800, margin:'0 auto' }}>
-<h2>Escenario</h2>
-<ProgressBar current={idx+1} total={total} />
-<QuestionView question={q} onAnswered={onAnswered} onNext={goNext} />
-</main>
+    <main className="min-h-screen bg-gray-100">
+    <section className="max-w-3xl mx-auto px-4 py-8">
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">
+        Escenario
+        </h2>
+
+        <div className="mb-4">
+        <ProgressBar current={idx + 1} total={total} />
+        </div>
+
+        <div className="mt-4">
+        <QuestionView
+            question={q}
+            onAnswered={onAnswered}
+            onNext={goNext}
+        />
+        </div>
+    </section>
+    </main>
 );
 }

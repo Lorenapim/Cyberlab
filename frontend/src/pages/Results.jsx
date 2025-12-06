@@ -13,10 +13,22 @@ const reset = useGameStore(s => s.reset);
 
 
 return (
-<main style={{ padding:20 }}>
-<h1>Resultados</h1>
-<p>Puntaje total: <b>{score}</b></p>
-<button onClick={reset}>Reiniciar (local)</button>
-</main>
-);
+    <main className="min-h-screen bg-gray-100">
+      <section className="max-w-xl mx-auto px-4 py-10">
+        <h1 className="text-3xl font-bold text-gray-900">Resultados</h1>
+
+        <p className="mt-4 text-lg text-gray-700">
+          Puntaje total:{' '}
+          <span className="font-semibold text-blue-700">{score}</span>
+        </p>
+
+        <button
+          onClick={reset}
+          className="mt-6 inline-flex items-center rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700"
+        >
+          Reiniciar (local)
+        </button>
+      </section>
+    </main>
+  );
 }
