@@ -1,3 +1,4 @@
+import React from 'react';  
 import { useGameStore } from '../store';
 import { useMemo, useState } from 'react';
 

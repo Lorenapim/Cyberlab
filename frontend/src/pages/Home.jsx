@@ -1,3 +1,4 @@
+import React from 'react';
 import { useEffect, useState } from 'react';
 import { getScenarios } from '../api';
 import ScenarioCard from '../components/ScenarioCard';

@@ -17,7 +17,12 @@ const app = express();
 
 
 app.use(helmet());
-app.use(cors({ origin: process.env.CORS_ORIGIN?.split(',') ?? '*'}));
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'http://localhost:5174'
+  ]
+}));
 app.use(express.json());
 app.use(morgan('dev'));
 app.use(rateLimit({ windowMs: 60_000, max: 120 }));
